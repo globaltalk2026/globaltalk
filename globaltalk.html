@@ -1,18 +1,106 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#101a35">
 <title>GLOBAL TALK — Speak Freely</title>
 <style>
 :root{--bg:#0b1224;--panel:#121d36;--panel2:#182642;--line:#293958;--text:#edf3ff;--muted:#9aabc8;--a:#6d8cff;--b:#36d6b0;--danger:#ff657a}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1c2d54 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.45 Inter,system-ui,Arial,sans-serif}
-button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;color:white;background:linear-gradient(135deg,#6685ff,#8068ee);padding:11px 15px;border-radius:12px;font-weight:650}button.secondary{background:#243451;border:1px solid var(--line)}button.ghost{background:transparent;border:1px solid var(--line)}button.danger{background:#a8324c}button:disabled{opacity:.45;cursor:not-allowed}
-.app{display:grid;grid-template-columns:260px minmax(0,1fr) 300px;min-height:100vh;max-width:1600px;margin:auto}.sidebar,.right{background:rgba(15,25,47,.9);padding:20px;border-color:var(--line)}.sidebar{border-right:1px solid var(--line)}.right{border-left:1px solid var(--line)}
-.brand{display:flex;gap:11px;align-items:center;font-size:19px;font-weight:850;letter-spacing:.5px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#52d9c0,#647dff);display:grid;place-items:center;font-size:22px}
-.tag{font-size:10px;color:#9fe9db;letter-spacing:1.7px;margin-top:2px}.section{font-size:11px;color:#7f93b5;letter-spacing:1.5px;font-weight:800;margin:28px 0 10px}.nav{display:flex;gap:12px;align-items:center;padding:11px 12px;color:#b8c7e1;border-radius:11px;margin:4px 0;cursor:pointer}.nav.active,.nav:hover{background:#223354;color:white}.nav .ico{width:22px;text-align:center}.profile{display:flex;gap:10px;align-items:center;margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}.avatar{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffb76d,#ef7a9b);font-weight:800;color:#17213a}.muted{color:var(--muted)}.small{font-size:12px}.main{padding:22px;min-width:0}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.top h1{font-size:22px;margin:0}.status{font-size:12px;color:#8ce5c9;display:flex;align-items:center;gap:7px}.dot{width:8px;height:8px;background:#36d6b0;border-radius:50%;display:inline-block}
-.grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.8fr);gap:16px}.card{background:linear-gradient(160deg,rgba(25,40,68,.95),rgba(17,29,51,.95));border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:0 12px 35px #03081733}.hero{background:linear-gradient(115deg,#243c70,#423b7c 60%,#1c5663);border:1px solid #5665a1;border-radius:19px;padding:22px;margin-bottom:17px;position:relative;overflow:hidden}.hero:after{content:"🌐";position:absolute;right:25px;top:12px;font-size:82px;opacity:.18}.hero h2{margin:0 0 7px;font-size:23px}.hero p{margin:0;color:#d4def5;max-width:560px}.hero .row{margin-top:17px;display:flex;gap:9px;flex-wrap:wrap}.card h3{font-size:15px;margin:0 0 13px}.chat-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.chatbox{height:340px;overflow:auto;padding:8px 2px;display:flex;flex-direction:column;gap:12px}.bubble{max-width:85%;padding:11px 13px;border-radius:15px;background:#243653;border:1px solid #304766}.bubble.me{align-self:flex-end;background:#33417b;border-color:#4c5eaa}.bubble .who{font-size:11px;color:#a9bbda;margin-bottom:4px}.translated{border-top:1px solid #ffffff22;margin-top:8px;padding-top:7px;color:#9ee8d4;font-size:13px}.composer{display:flex;gap:8px;margin-top:10px}.composer input{flex:1;min-width:0}.field,input,select,textarea{width:100%;background:#0d1830;color:white;border:1px solid #344565;border-radius:11px;padding:11px;outline:none}.field:focus,input:focus,select:focus{border-color:#8198ff}.pill{display:inline-flex;padding:5px 9px;border-radius:20px;background:#203956;color:#a9e7da;font-size:11px}.stat{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #293958}.stat:last-child{border:0}.quick{display:grid;grid-template-columns:1fr 1fr;gap:9px}.quick button{min-height:70px;background:#1d3152;border:1px solid #344b70;text-align:left}.quick span{display:block;font-size:20px;margin-bottom:5px}.video{height:190px;background:linear-gradient(135deg,#101b32,#253b65);border-radius:13px;display:grid;place-items:center;text-align:center;overflow:hidden;position:relative}.video video{width:100%;height:100%;object-fit:cover}.video .placeholder{color:#a9bad6}.video-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}.langrow{display:grid;grid-template-columns:1fr 30px 1fr;gap:7px;align-items:center}.contact{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #293958}.contact:last-child{border:0}.contact .avatar{width:35px;height:35px}.online{font-size:11px;color:#6ee1bb}.right .card{margin-bottom:15px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#eaf2ff;color:#14213c;padding:11px 16px;border-radius:12px;box-shadow:0 8px 30px #0008;display:none;z-index:10}.modal{position:fixed;inset:0;background:#030817bb;display:none;place-items:center;padding:18px;z-index:20}.modal.open{display:grid}.modalbox{width:min(520px,100%);background:#15233e;border:1px solid #435779;border-radius:18px;padding:22px}.modalbox h2{margin-top:0}.foot{font-size:11px;color:#8294b2;margin-top:18px;line-height:1.6}
-@media(max-width:1050px){.app{grid-template-columns:220px minmax(0,1fr)}.right{display:none}}@media(max-width:700px){.app{display:block}.sidebar{position:sticky;top:0;z-index:5;border-right:0;border-bottom:1px solid var(--line);padding:10px 13px;display:flex;align-items:center;justify-content:space-between}.sidebar .brand{font-size:15px}.sidebar .logo{width:34px;height:34px}.sidebar .section,.sidebar .nav,.sidebar .profile{display:none}.main{padding:14px}.grid{grid-template-columns:1fr}.hero{padding:18px}.hero:after{font-size:55px}.chatbox{height:300px}.top h1{font-size:19px}.top .status{display:none}}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1c2d54 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.45 Inter,system-ui,Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:0;color:white;background:linear-gradient(135deg,#6685ff,#8068ee);padding:11px 15px;border-radius:12px;font-weight:650;transition:opacity .2s,transform .1s}
+button:active{transform:scale(.98)}
+button.secondary{background:#243451;border:1px solid var(--line)}
+button.ghost{background:transparent;border:1px solid var(--line)}
+button.danger{background:#a8324c}
+button:disabled{opacity:.45;cursor:not-allowed}
+.app{display:grid;grid-template-columns:260px minmax(0,1fr) 300px;min-height:100vh;max-width:1600px;margin:auto}
+.sidebar,.right{background:rgba(15,25,47,.9);padding:20px;border-color:var(--line)}
+.sidebar{border-right:1px solid var(--line)}
+.right{border-left:1px solid var(--line)}
+.brand{display:flex;gap:11px;align-items:center;font-size:19px;font-weight:850;letter-spacing:.5px}
+.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#52d9c0,#647dff);display:grid;place-items:center;font-size:22px}
+.tag{font-size:10px;color:#9fe9db;letter-spacing:1.7px;margin-top:2px}
+.section{font-size:11px;color:#7f93b5;letter-spacing:1.5px;font-weight:800;margin:28px 0 10px}
+.nav{display:flex;gap:12px;align-items:center;padding:11px 12px;color:#b8c7e1;border-radius:11px;margin:4px 0;cursor:pointer}
+.nav.active,.nav:hover{background:#223354;color:white}
+.nav .ico{width:22px;text-align:center}
+.profile{display:flex;gap:10px;align-items:center;margin-top:30px;padding-top:18px;border-top:1px solid var(--line)}
+.avatar{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffb76d,#ef7a9b);font-weight:800;color:#17213a;flex-shrink:0}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.main{padding:22px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.top h1{font-size:22px;margin:0}
+.status{font-size:12px;color:#8ce5c9;display:flex;align-items:center;gap:7px;background:#152442;padding:6px 12px;border-radius:20px;border:1px solid var(--line)}
+.dot{width:8px;height:8px;background:#36d6b0;border-radius:50%;display:inline-block}
+.dot.warn{background:#ffb74d}
+.dot.err{background:#ff657a}
+.grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.8fr);gap:16px}
+.card{background:linear-gradient(160deg,rgba(25,40,68,.95),rgba(17,29,51,.95));border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:0 12px 35px #03081733}
+.hero{background:linear-gradient(115deg,#243c70,#423b7c 60%,#1c5663);border:1px solid #5665a1;border-radius:19px;padding:22px;margin-bottom:17px;position:relative;overflow:hidden}
+.hero:after{content:"🌐";position:absolute;right:25px;top:12px;font-size:82px;opacity:.18}
+.hero h2{margin:0 0 7px;font-size:23px}
+.hero p{margin:0;color:#d4def5;max-width:560px}
+.hero .row{margin-top:17px;display:flex;gap:9px;flex-wrap:wrap}
+.card h3{font-size:15px;margin:0 0 13px}
+.chat-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.chatbox{height:340px;overflow:auto;padding:8px 4px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.bubble{max-width:85%;padding:11px 13px;border-radius:15px;background:#243653;border:1px solid #304766;word-wrap:break-word}
+.bubble.me{align-self:flex-end;background:#33417b;border-color:#4c5eaa}
+.bubble .who{font-size:11px;color:#a9bbda;margin-bottom:4px;display:flex;justify-content:space-between;gap:10px}
+.translated{border-top:1px solid #ffffff22;margin-top:8px;padding-top:7px;color:#9ee8d4;font-size:13px}
+.composer{display:flex;gap:8px;margin-top:10px}
+.composer input{flex:1;min-width:0}
+.field,input,select,textarea{width:100%;background:#0d1830;color:white;border:1px solid #344565;border-radius:11px;padding:11px;outline:none}
+.field:focus,input:focus,select:focus{border-color:#8198ff}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;background:#203956;color:#a9e7da;font-size:11px}
+.stat{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #293958}
+.stat:last-child{border:0}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.quick button{min-height:70px;background:#1d3152;border:1px solid #344b70;text-align:left}
+.quick span{display:block;font-size:20px;margin-bottom:5px}
+.video-wrap{position:relative;height:260px;background:linear-gradient(135deg,#101b32,#253b65);border-radius:13px;overflow:hidden;border:1px solid #344b70}
+.video-wrap video#remoteVideo{width:100%;height:100%;object-fit:cover}
+.video-wrap video#localVideo{position:absolute;bottom:10px;right:10px;width:110px;height:80px;object-fit:cover;border-radius:10px;border:2px solid #52d9c0;background:#0b1224;z-index:2}
+.video-wrap .placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#a9bad6;padding:16px}
+.video-actions{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.langrow{display:grid;grid-template-columns:1fr 30px 1fr;gap:7px;align-items:center}
+.contact{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #293958}
+.contact:last-child{border:0}
+.contact .avatar{width:35px;height:35px}
+.online{font-size:11px;color:#6ee1bb}
+.right .card{margin-bottom:15px}
+.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#eaf2ff;color:#14213c;padding:11px 16px;border-radius:12px;box-shadow:0 8px 30px #0008;display:none;z-index:50;font-weight:600;max-width:90vw;text-align:center}
+.modal{position:fixed;inset:0;background:#030817bb;display:none;place-items:center;padding:18px;z-index:40}
+.modal.open{display:grid}
+.modalbox{width:min(520px,100%);background:#15233e;border:1px solid #435779;border-radius:18px;padding:22px}
+.modalbox h2{margin-top:0}
+.foot{font-size:11px;color:#8294b2;margin-top:18px;line-height:1.6}
+.mobile-nav{display:none}
+
+@media(max-width:1050px){
+  .app{grid-template-columns:220px minmax(0,1fr)}
+  .right{display:none}
+}
+@media(max-width:700px){
+  .app{display:block;padding-bottom:65px}
+  .sidebar{position:sticky;top:0;z-index:15;border-right:0;border-bottom:1px solid var(--line);padding:10px 13px;display:flex;align-items:center;justify-content:space-between}
+  .sidebar .brand{font-size:15px}
+  .sidebar .logo{width:34px;height:34px}
+  .sidebar .section,.sidebar .nav,.sidebar .profile{display:none}
+  .main{padding:14px}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:18px}
+  .hero:after{font-size:55px}
+  .chatbox{height:300px}
+  .top h1{font-size:18px}
+  .mobile-nav{position:fixed;bottom:0;left:0;right:0;background:#0f192f;border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px;z-index:20}
+  .mobile-nav button{background:transparent;padding:6px 8px;font-size:11px;color:#9aabc8;display:flex;flex-direction:column;align-items:center;gap:2px}
+  .mobile-nav button.active{color:#36d6b0}
+}
 </style>
 </head>
 <body>
@@ -27,60 +115,761 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;color:w
  <div class="nav" data-view="rooms"><span class="ico">◎</span> Ruang Global</div>
  <div class="section">PENGATURAN</div>
  <div class="nav" data-view="settings"><span class="ico">⚙</span> Bahasa & pengaturan</div>
- <div class="profile"><div class="avatar" id="avatar">ID</div><div><b id="displayName">Tamu Global</b><div class="small muted" id="uidShort">Menghubungkan...</div></div></div>
+ <div class="profile"><div class="avatar" id="avatar">PG</div><div><b id="displayName">Pengguna Global</b><div class="small muted" id="uidShort">Menghubungkan...</div></div></div>
 </aside>
+
 <main class="main">
- <div class="top"><h1 id="pageTitle">Selamat datang di Global Talk</h1><div class="status"><i class="dot"></i><span id="connection">Menyiapkan koneksi...</span></div></div>
+ <div class="top">
+  <h1 id="pageTitle">Selamat datang di Global Talk</h1>
+  <div class="status"><i class="dot warn" id="connDot"></i><span id="connection">Menyiapkan koneksi...</span></div>
+ </div>
+
  <section id="homeView">
-  <div class="hero"><h2>Satu dunia, tanpa batas bahasa.</h2><p>Berbicara dengan siapa pun dalam bahasa Anda. Pesan teks diterjemahkan otomatis, dan fitur suara membantu percakapan lintas bahasa.</p><div class="row"><button onclick="showView('chat')">✉ Mulai mengobrol</button><button class="secondary" onclick="showView('calls')">◉ Mulai panggilan</button></div></div>
+  <div class="hero">
+   <h2>Satu dunia, tanpa batas bahasa.</h2>
+   <p>Berbicara dengan siapa pun dalam bahasa Anda. Pesan teks diterjemahkan otomatis via Firebase Realtime, dan fitur video call menghubungkan Anda secara langsung.</p>
+   <div class="row">
+    <button onclick="showView('chat')">✉ Mulai mengobrol</button>
+    <button class="secondary" onclick="showView('calls')">◉ Mulai panggilan video</button>
+   </div>
+  </div>
   <div class="grid">
-   <div class="card"><div class="chat-head"><h3>💬 Percakapan global</h3><span class="pill">Ruang publik</span></div><div id="messages" class="chatbox"><div class="muted small">Menghubungkan ke Firebase dan memuat pesan...</div></div><div class="composer"><input id="messageInput" placeholder="Tulis pesan dalam bahasa Anda..." maxlength="1500"><button id="sendBtn" onclick="sendMessage()">Kirim</button></div><div class="small muted" style="margin-top:8px">Pesan akan diterjemahkan ke bahasa pilihan penerima.</div></div>
-   <div class="card"><h3>⚡ Akses cepat</h3><div class="quick"><button onclick="showView('chat')"><span>💬</span>Chat global</button><button onclick="showView('calls')"><span>📹</span>Video call</button><button onclick="startListening()"><span>🎙️</span>Ucapkan pesan</button><button onclick="showView('settings')"><span>🌐</span>Atur bahasa</button></div><h3 style="margin-top:20px">Aktivitas akun</h3><div class="stat"><span class="muted">Bahasa saya</span><b id="myLangStat">Indonesia</b></div><div class="stat"><span class="muted">Bahasa tujuan</span><b id="targetLangStat">Jepang</b></div><div class="stat"><span class="muted">Status database</span><b id="dbStat">Menunggu</b></div></div>
+   <div class="card">
+    <div class="chat-head">
+     <h3>💬 Percakapan global (<span id="activeRoomBadge">global-lounge</span>)</h3>
+     <span class="pill">● Live Sync</span>
+    </div>
+    <div id="messages" class="chatbox"><div class="muted small">Menghubungkan ke Firebase dan memuat pesan...</div></div>
+    <div class="composer">
+     <input id="messageInput" placeholder="Tulis pesan dalam bahasa Anda..." maxlength="1500">
+     <button id="sendBtn" onclick="sendMessage()">Kirim</button>
+    </div>
+    <div class="small muted" style="margin-top:8px">Pesan otomatis diterjemahkan ke bahasa pilihan Anda & lawan bicara.</div>
+   </div>
+
+   <div class="card">
+    <h3>⚡ Akses cepat</h3>
+    <div class="quick">
+     <button onclick="showView('chat')"><span>💬</span>Chat global</button>
+     <button onclick="showView('calls')"><span>📹</span>Video call</button>
+     <button onclick="startListening()"><span>🎙️</span>Ucapkan pesan</button>
+     <button onclick="showView('settings')"><span>🌐</span>Atur bahasa</button>
+    </div>
+    <h3 style="margin-top:20px">Status Sistem</h3>
+    <div class="stat"><span class="muted">Bahasa saya</span><b id="myLangStat">Indonesia</b></div>
+    <div class="stat"><span class="muted">Bahasa tujuan</span><b id="targetLangStat">Jepang</b></div>
+    <div class="stat"><span class="muted">Database Firebase</span><b id="dbStat">Menghubungkan...</b></div>
+    <div class="stat"><span class="muted">ID Sesi Aktif</span><b id="sessionStat" class="small">-</b></div>
+   </div>
   </div>
  </section>
- <section id="chatView" hidden><div class="card"><div class="chat-head"><div><h3>💬 Global chat</h3><div class="small muted">Percakapan publik demo — jangan kirim data rahasia</div></div><span class="pill">Realtime</span></div><div id="messages2" class="chatbox"></div><div class="composer"><input id="messageInput2" placeholder="Ketik pesan..." maxlength="1500"><button onclick="sendMessage('messageInput2')">Kirim</button></div></div></section>
- <section id="callsView" hidden><div class="grid"><div class="card"><h3>📹 Panggilan video lintas bahasa</h3><div class="video"><video id="remoteVideo" autoplay playsinline></video><div class="placeholder" id="remotePlaceholder">🌏<br>Video lawan bicara akan tampil di sini</div></div><div class="video-actions"><button onclick="startCall()">Mulai / buat panggilan</button><button class="secondary" onclick="joinCall()">Gabung panggilan</button><button class="danger" onclick="endCall()">Akhiri</button></div><div class="small muted" style="margin-top:12px">WebRTC memerlukan izin kamera/mikrofon dan HTTPS. Kedua pengguna harus memakai ID ruang yang sama.</div></div><div class="card"><h3>🎙️ Mikrofon & terjemahan suara</h3><div class="pill" id="speechStatus">Siap mendengarkan</div><p class="muted small">Tekan tombol, ucapkan kalimat, lalu hasil teks akan diterjemahkan dan dibacakan dalam bahasa tujuan.</p><button onclick="startListening()">🎙️ Bicara & terjemahkan</button><div id="speechResult" class="bubble" style="margin-top:14px;max-width:100%">Hasil pengenalan suara akan muncul di sini.</div><div id="speechTranslation" class="translated"></div></div></div></section>
- <section id="contactsView" hidden><div class="card"><h3>♧ Kontak & teman</h3><p class="muted">Fitur direktori kontak akan aktif setelah autentikasi akun dan sistem pertemanan dipasang.</p><div class="contact"><div class="avatar">JP</div><div><b>Teman Jepang</b><div class="online">● Contoh kontak · Tokyo</div></div></div><div class="contact"><div class="avatar" style="background:linear-gradient(135deg,#6a9fff,#62d8bf)">US</div><div><b>Global community</b><div class="online">● Ruang publik</div></div></div></div></section>
- <section id="roomsView" hidden><div class="card"><h3>◎ Ruang Global</h3><p class="muted">Pilih komunitas untuk mulai berbincang lintas negara.</p><div class="quick"><button onclick="setRoom('indonesia-japan')"><span>🇮🇩 🇯🇵</span>Indonesia – Jepang</button><button onclick="setRoom('global-lounge')"><span>🌍</span>Global Lounge</button><button onclick="setRoom('english-corner')"><span>🇬🇧</span>English Corner</button><button onclick="setRoom('travel-friends')"><span>✈️</span>Travel Friends</button></div><p class="small muted" id="roomLabel">Ruang aktif: global-lounge</p></div></section>
- <section id="settingsView" hidden><div class="card"><h3>⚙ Bahasa & profil</h3><label class="small muted">Nama tampilan</label><input id="nameInput" value="Pengguna Global" style="margin:6px 0 14px"><div class="langrow"><div><label class="small muted">Bahasa saya</label><select id="sourceLang"><option value="id">🇮🇩 Indonesia</option><option value="ja">🇯🇵 Jepang</option><option value="en">🇬🇧 Inggris</option><option value="zh">🇨🇳 Mandarin</option><option value="ko">🇰🇷 Korea</option><option value="es">🇪🇸 Spanyol</option><option value="fr">🇫🇷 Prancis</option><option value="de">🇩🇪 Jerman</option><option value="ar">🇸🇦 Arab</option></select></div><div style="text-align:center">⇄</div><div><label class="small muted">Bahasa lawan bicara</label><select id="targetLang"><option value="ja">🇯🇵 Jepang</option><option value="id">🇮🇩 Indonesia</option><option value="en">🇬🇧 Inggris</option><option value="zh">🇨🇳 Mandarin</option><option value="ko">🇰🇷 Korea</option><option value="es">🇪🇸 Spanyol</option><option value="fr">🇫🇷 Prancis</option><option value="de">🇩🇪 Jerman</option><option value="ar">🇸🇦 Arab</option></select></div></div><button style="margin-top:16px" onclick="saveSettings()">Simpan pengaturan</button><div class="foot">Pengaturan bahasa mengatur terjemahan di perangkat ini. Untuk setiap pengguna, bahasa tujuan idealnya dibaca dari profil penerima.</div></div><div class="card"><h3>🔐 Privasi & keamanan</h3><p class="small muted">Gunakan Firebase Authentication dan Security Rules sebelum membuka aplikasi untuk umum. Jangan menyimpan API key AI di HTML. Chat demo ini menggunakan ruang publik.</p></div></section>
- <div class="foot">GLOBAL TALK · Prototype web. Terjemahan teks membutuhkan endpoint API yang dikonfigurasi. Panggilan video menggunakan WebRTC.</div>
+
+ <section id="chatView" hidden>
+  <div class="card">
+   <div class="chat-head">
+    <div>
+     <h3>💬 Global chat — Ruang: <span id="activeRoomBadge2">global-lounge</span></h3>
+     <div class="small muted">Terhubung langsung ke Firebase Realtime Database</div>
+    </div>
+    <button class="secondary small" onclick="showView('rooms')">Ganti Ruang</button>
+   </div>
+   <div id="messages2" class="chatbox" style="height:420px"></div>
+   <div class="composer">
+    <input id="messageInput2" placeholder="Ketik pesan di sini..." maxlength="1500">
+    <button onclick="sendMessage('messageInput2')">Kirim</button>
+   </div>
+  </div>
+ </section>
+
+ <section id="callsView" hidden>
+  <div class="grid">
+   <div class="card">
+    <div class="chat-head">
+     <h3>📹 Panggilan video lintas bahasa</h3>
+     <span class="pill" id="callStateBadge">Siap</span>
+    </div>
+    <div class="video-wrap">
+     <video id="remoteVideo" autoplay playsinline></video>
+     <video id="localVideo" autoplay muted playsinline></video>
+     <div class="placeholder" id="remotePlaceholder"><div>🌏<br><b>Video lawan bicara akan tampil di sini</b><br><span class="small">Buat panggilan baru atau gabung memakai kode ruang yang sama</span></div></div>
+    </div>
+    <div class="video-actions">
+     <button onclick="startCall()">📹 Buat Panggilan</button>
+     <button class="secondary" onclick="joinCall()">🔗 Gabung Panggilan</button>
+     <button class="ghost" id="muteBtn" onclick="toggleAudio()" disabled>🎤 Mute</button>
+     <button class="ghost" id="camBtn" onclick="toggleVideo()" disabled>📷 Cam Off</button>
+     <button class="danger" onclick="endCall()">✖ Akhiri</button>
+    </div>
+    <div id="activeCallInfo" class="small" style="margin-top:12px;color:#9ee8d4;display:none"></div>
+    <div class="small muted" style="margin-top:8px">Tips: Buka halaman ini di 2 perangkat/tab berbeda, klik <b>Buat Panggilan</b> di perangkat 1, lalu klik <b>Gabung Panggilan</b> dengan kode ruang yang sama di perangkat 2.</div>
+   </div>
+
+   <div class="card">
+    <h3>🎙️ Mikrofon & terjemahan suara</h3>
+    <div class="pill" id="speechStatus">Siap mendengarkan</div>
+    <p class="muted small">Tekan tombol di bawah, ucapkan kalimat dalam bahasa Anda, lalu hasil teks akan diterjemahkan dan dibacakan dalam bahasa tujuan.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+     <button onclick="startListening()">🎙️ Bicara & terjemahkan</button>
+     <button class="secondary" onclick="sendSpeechToChat()" id="sendSpeechBtn" disabled>✉ Kirim ke Chat</button>
+    </div>
+    <div id="speechResult" class="bubble" style="margin-top:14px;max-width:100%">Hasil pengenalan suara akan muncul di sini.</div>
+    <div id="speechTranslation" class="translated"></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="contactsView" hidden>
+  <div class="card">
+   <h3>♧ Pengguna & Komunitas</h3>
+   <p class="muted small">Pengguna aktif yang baru saja mengirim pesan di ruang ini akan muncul otomatis di bawah:</p>
+   <div id="activeUsersList">
+    <div class="contact"><div class="avatar">JP</div><div><b>Teman Jepang</b><div class="online">● Ruang: indonesia-japan</div></div></div>
+    <div class="contact"><div class="avatar" style="background:linear-gradient(135deg,#6a9fff,#62d8bf)">GL</div><div><b>Global Community</b><div class="online">● Ruang: global-lounge</div></div></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="roomsView" hidden>
+  <div class="card">
+   <h3>◎ Ruang Global</h3>
+   <p class="muted">Pilih komunitas untuk mulai berbincang lintas negara secara real-time.</p>
+   <div class="quick">
+    <button onclick="setRoom('indonesia-japan')"><span>🇮🇩 🇯🇵</span>Indonesia – Jepang</button>
+    <button onclick="setRoom('global-lounge')"><span>🌍</span>Global Lounge</button>
+    <button onclick="setRoom('english-corner')"><span>🇬🇧</span>English Corner</button>
+    <button onclick="setRoom('travel-friends')"><span>✈️</span>Travel Friends</button>
+   </div>
+   <p class="small muted" id="roomLabel" style="margin-top:14px">Ruang aktif: global-lounge</p>
+  </div>
+ </section>
+
+ <section id="settingsView" hidden>
+  <div class="card">
+   <h3>⚙ Bahasa & profil</h3>
+   <label class="small muted">Nama tampilan Anda</label>
+   <input id="nameInput" value="Pengguna Global" style="margin:6px 0 14px">
+   <div class="langrow">
+    <div>
+     <label class="small muted">Bahasa saya</label>
+     <select id="sourceLang">
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="ja">🇯🇵 Jepang</option>
+      <option value="en">🇬🇧 Inggris</option>
+      <option value="zh">🇨🇳 Mandarin</option>
+      <option value="ko">🇰🇷 Korea</option>
+      <option value="es">🇪🇸 Spanyol</option>
+      <option value="fr">🇫🇷 Prancis</option>
+      <option value="de">🇩🇪 Jerman</option>
+      <option value="ar">🇸🇦 Arab</option>
+     </select>
+    </div>
+    <div style="text-align:center;padding-top:18px">⇄</div>
+    <div>
+     <label class="small muted">Bahasa lawan bicara</label>
+     <select id="targetLang">
+      <option value="ja">🇯🇵 Jepang</option>
+      <option value="id">🇮🇩 Indonesia</option>
+      <option value="en">🇬🇧 Inggris</option>
+      <option value="zh">🇨🇳 Mandarin</option>
+      <option value="ko">🇰🇷 Korea</option>
+      <option value="es">🇪🇸 Spanyol</option>
+      <option value="fr">🇫🇷 Prancis</option>
+      <option value="de">🇩🇪 Jerman</option>
+      <option value="ar">🇸🇦 Arab</option>
+     </select>
+    </div>
+   </div>
+   <button style="margin-top:16px" onclick="saveSettings()">Simpan pengaturan</button>
+   <div class="foot">Pengaturan bahasa tersimpan otomatis di browser perangkat ini.</div>
+  </div>
+ </section>
+
+ <div class="foot">GLOBAL TALK · Realtime Firebase Chat & WebRTC Video Call.</div>
 </main>
+
 <aside class="right">
- <div class="card"><h3>🌐 Penerjemah langsung</h3><div class="langrow"><div><span class="small muted">Dari</span><b id="sourceLabel">Indonesia</b></div><div style="text-align:center">⇄</div><div><span class="small muted">Ke</span><b id="targetLabel">Jepang</b></div></div><div class="stat" style="margin-top:13px"><span class="muted">Mode</span><span class="pill">Otomatis</span></div><div class="stat"><span class="muted">Teks</span><b>Didukung</b></div><div class="stat"><span class="muted">Suara</span><b>Eksperimental</b></div></div>
- <div class="card"><h3>👥 Pengguna online</h3><div class="contact"><div class="avatar">🌸</div><div><b>Komunitas Jepang</b><div class="small online">● Contoh pengguna</div></div></div><div class="contact"><div class="avatar">🌴</div><div><b>Komunitas Indonesia</b><div class="small online">● Contoh pengguna</div></div></div><div class="small muted">Daftar ini contoh tampilan, bukan daftar pengguna Firebase.</div></div>
- <div class="card"><h3>✨ Manfaat Global Talk</h3><div class="stat"><span>Belajar bahasa</span>📚</div><div class="stat"><span>Bisnis internasional</span>🤝</div><div class="stat"><span>Wisata & perjalanan</span>✈️</div><div class="stat"><span>Persahabatan global</span>🌍</div></div>
+ <div class="card">
+  <h3>🌐 Penerjemah langsung</h3>
+  <div class="langrow">
+   <div><span class="small muted">Dari</span><br><b id="sourceLabel">Indonesia</b></div>
+   <div style="text-align:center">⇄</div>
+   <div><span class="small muted">Ke</span><br><b id="targetLabel">Jepang</b></div>
+  </div>
+  <div class="stat" style="margin-top:13px"><span class="muted">Mode</span><span class="pill">Otomatis</span></div>
+  <div class="stat"><span class="muted">Teks Realtime</span><b>Aktif</b></div>
+  <div class="stat"><span class="muted">Video WebRTC</span><b>Aktif</b></div>
+ </div>
+ <div class="card">
+  <h3>👥 Komunitas Online</h3>
+  <div class="contact"><div class="avatar">🌸</div><div><b>Komunitas Jepang</b><div class="small online">● Ruang: indonesia-japan</div></div></div>
+  <div class="contact"><div class="avatar">🌴</div><div><b>Komunitas Indonesia</b><div class="small online">● Ruang: global-lounge</div></div></div>
+ </div>
+ <div class="card">
+  <h3>✨ Manfaat Global Talk</h3>
+  <div class="stat"><span>Belajar bahasa</span>📚</div>
+  <div class="stat"><span>Bisnis internasional</span>🤝</div>
+  <div class="stat"><span>Wisata & perjalanan</span>✈️</div>
+  <div class="stat"><span>Persahabatan global</span>🌍</div>
+ </div>
 </aside>
 </div>
-<div class="modal" id="callModal"><div class="modalbox"><h2>Mulai panggilan</h2><p class="muted small">Masukkan kode ruang yang akan digunakan kedua peserta.</p><input id="callRoom" value="global-talk-room"><div style="display:flex;gap:9px;margin-top:14px"><button onclick="confirmCall()">Lanjutkan</button><button class="secondary" onclick="closeModal()">Batal</button></div></div></div>
+
+<!-- Navigasi Bawah Khusus Mobile -->
+<nav class="mobile-nav">
+ <button class="active" data-view="home" onclick="showView('home')"><span>⌂</span>Beranda</button>
+ <button data-view="chat" onclick="showView('chat')"><span>▤</span>Pesan</button>
+ <button data-view="calls" onclick="showView('calls')"><span>◉</span>Video</button>
+ <button data-view="rooms" onclick="showView('rooms')"><span>◎</span>Ruang</button>
+ <button data-view="settings" onclick="showView('settings')"><span>⚙</span>Setelan</button>
+</nav>
+
+<div class="modal" id="callModal">
+ <div class="modalbox">
+  <h2>Mulai panggilan video</h2>
+  <p class="muted small">Masukkan kode ruang panggilan yang akan dibagikan ke lawan bicara.</p>
+  <input id="callRoom" value="global-talk-room" placeholder="Contoh: ruang-123">
+  <div style="display:flex;gap:9px;margin-top:14px">
+   <button onclick="confirmCall()">Lanjutkan</button>
+   <button class="secondary" onclick="closeModal()">Batal</button>
+  </div>
+ </div>
+</div>
+
 <div class="toast" id="toast"></div>
+
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 <script>
-const firebaseConfig={apiKey:"AIzaSyB_dNmamUGlJtHidqM7vxL7ta37EsZz24o",authDomain:"nomadic-basis-431707-b8.firebaseapp.com",databaseURL:"https://nomadic-basis-431707-b8-default-rtdb.firebaseio.com",projectId:"nomadic-basis-431707-b8",storageBucket:"nomadic-basis-431707-b8.firebasestorage.app",messagingSenderId:"351255276093",appId:"1:351255276093:web:d96795daf864d737279854"};
-let db=null,uid=null,room="global-lounge",localStream=null,pc=null,callRef=null,unsubs=[],currentCallRoom="";const $=id=>document.getElementById(id);
-const names={id:"Indonesia",ja:"Jepang",en:"Inggris",zh:"Mandarin",ko:"Korea",es:"Spanyol",fr:"Prancis",de:"Jerman",ar:"Arab"};
-function toast(t){$('toast').textContent=t;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',3000)}
-function showView(v){['home','chat','calls','contacts','rooms','settings'].forEach(x=>$(x+'View').hidden=x!==v);document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.view===v));$('pageTitle').textContent=({home:'Selamat datang di Global Talk',chat:'Pesan & percakapan',calls:'Panggilan lintas bahasa',contacts:'Kontak Anda',rooms:'Komunitas Global',settings:'Pengaturan bahasa'})[v]}
-document.querySelectorAll('.nav').forEach(n=>n.onclick=()=>showView(n.dataset.view));
-function initFirebase(){try{if(!firebase.apps.length)firebase.initializeApp(firebaseConfig);db=firebase.database();firebase.auth().signInAnonymously().then(c=>{uid=c.user.uid;$('uidShort').textContent='ID '+uid.slice(0,8);$('connection').textContent='Firebase terhubung';$('dbStat').textContent='Terhubung';listenMessages()}).catch(e=>{console.error(e);$('connection').textContent='Periksa Authentication';$('dbStat').textContent='Belum aktif';toast('Firebase Auth belum aktif. Aktifkan Anonymous sign-in.')})}catch(e){$('connection').textContent='Konfigurasi Firebase gagal';console.error(e)}}
-function listenMessages(){if(!db)return;const ref=db.ref('publicRooms/'+room+'/messages').limitToLast(80);ref.on('child_added',s=>{const m=s.val();renderMessage(m);});unsubs.push(()=>ref.off())}
-async function renderMessage(m){let translated='';if(m.uid===uid){translated=m.translated||''}else{const myLanguage=$('sourceLang').value;translated=(m.source&&m.source!==myLanguage)?await translateText(m.text,m.source,myLanguage):(m.translated||'')}['messages','messages2'].forEach(id=>{const box=$(id);if(!box)return;const d=document.createElement('div');d.className='bubble '+(m.uid===uid?'me':'');const who=document.createElement('div');who.className='who';who.textContent=(m.name||'Pengguna')+' · '+(m.lang||'');const body=document.createElement('div');body.textContent=m.text||'';d.append(who,body);if(translated){const tr=document.createElement('div');tr.className='translated';tr.textContent='Terjemahan untuk Anda: '+translated;d.append(tr)}box.append(d);box.scrollTop=box.scrollHeight})}
-async function translateText(text,from,to){if(from===to)return text;try{const r=await fetch('/api/translate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,source:from,target:to})});if(!r.ok)throw new Error('API '+r.status);const j=await r.json();return j.translation||text}catch(e){console.warn(e);toast('Terjemahan belum aktif: konfigurasi API Vercel diperlukan.');return text}}
-async function sendMessage(inputId='messageInput'){if(!db||!uid){toast('Menunggu koneksi Firebase');return}const inp=$(inputId),text=inp.value.trim();if(!text)return;inp.value='';const from=$('sourceLang').value,to=$('targetLang').value;const translated=await translateText(text,from,to);await db.ref('publicRooms/'+room+'/messages').push({uid,name:$('nameInput').value||'Pengguna',lang:names[from],source:from,target:to,text,translated,createdAt:firebase.database.ServerValue.TIMESTAMP});}
-$('messageInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendMessage()});$('messageInput2').addEventListener('keydown',e=>{if(e.key==='Enter')sendMessage('messageInput2')});
-function setRoom(r){room=r;$('roomLabel').textContent='Ruang aktif: '+r;unsubs.forEach(f=>f());unsubs=[];$('messages').innerHTML='';$('messages2').innerHTML='';listenMessages();showView('chat');toast('Bergabung ke '+r)}
-function saveSettings(){const n=$('nameInput').value.trim()||'Pengguna Global';$('displayName').textContent=n;$('avatar').textContent=n.slice(0,2).toUpperCase();$('sourceLabel').textContent=names[$('sourceLang').value];$('targetLabel').textContent=names[$('targetLang').value];$('myLangStat').textContent=names[$('sourceLang').value];$('targetLangStat').textContent=names[$('targetLang').value];toast('Pengaturan disimpan di tampilan ini')}
-function startListening(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){toast('Browser ini belum mendukung pengenalan suara. Coba Chrome.');return}const rec=new SR();rec.lang=$('sourceLang').value;rec.interimResults=false;rec.onstart=()=>$('speechStatus').textContent='Mendengarkan...';rec.onerror=e=>{toast('Mikrofon: '+e.error);$('speechStatus').textContent='Siap mendengarkan'};rec.onresult=async e=>{const text=e.results[0][0].transcript;$('speechResult').textContent=text;const tr=await translateText(text,$('sourceLang').value,$('targetLang').value);$('speechTranslation').textContent=tr;const u=new SpeechSynthesisUtterance(tr);u.lang=({id:'id-ID',ja:'ja-JP',en:'en-US',zh:'zh-CN',ko:'ko-KR',es:'es-ES',fr:'fr-FR',de:'de-DE',ar:'ar-SA'})[$('targetLang').value]||'en-US';speechSynthesis.cancel();speechSynthesis.speak(u);$('speechStatus').textContent='Terjemahan selesai'};rec.onend=()=>{if($('speechStatus').textContent==='Mendengarkan...')$('speechStatus').textContent='Siap mendengarkan'};rec.start()}
-function startCall(){ $('callModal').classList.add('open') }function closeModal(){$('callModal').classList.remove('open')}async function confirmCall(){currentCallRoom=$('callRoom').value.trim();closeModal();await setupMedia(true)}
-async function joinCall(){currentCallRoom=prompt('Masukkan kode ruang panggilan:','global-talk-room');if(currentCallRoom)await setupMedia(false)}
-async function setupMedia(offerer){if(!db||!uid){toast('Firebase belum terhubung');return}try{localStream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});pc=new RTCPeerConnection({iceServers:[{urls:'stun:stun.l.google.com:19302'}]});localStream.getTracks().forEach(t=>pc.addTrack(t,localStream));pc.ontrack=e=>{$('remoteVideo').srcObject=e.streams[0];$('remotePlaceholder').style.display='none'};const root=db.ref('calls/'+currentCallRoom);const myCandidates=root.child(offerer?'callerCandidates':'calleeCandidates');pc.onicecandidate=e=>{if(e.candidate)myCandidates.push(e.candidate.toJSON())};if(offerer){const offer=await pc.createOffer();await pc.setLocalDescription(offer);await root.child('offer').set({type:offer.type,sdp:offer.sdp,from:uid});root.child('answer').on('value',async s=>{const a=s.val();if(a&&!pc.currentRemoteDescription)await pc.setRemoteDescription(new RTCSessionDescription(a))});root.child('calleeCandidates').on('child_added',s=>pc.addIceCandidate(new RTCIceCandidate(s.val())).catch(console.warn))}else{root.child('offer').on('value',async s=>{const o=s.val();if(o&&!pc.currentRemoteDescription){await pc.setRemoteDescription(new RTCSessionDescription(o));const a=await pc.createAnswer();await pc.setLocalDescription(a);await root.child('answer').set({type:a.type,sdp:a.sdp,from:uid})}});root.child('callerCandidates').on('child_added',s=>pc.addIceCandidate(new RTCIceCandidate(s.val())).catch(console.warn))}toast('Kamera aktif. Bagikan kode ruang: '+currentCallRoom)}catch(e){console.error(e);toast('Tidak dapat memulai panggilan: '+e.message)}}
-function endCall(){if(localStream)localStream.getTracks().forEach(t=>t.stop());if(pc)pc.close();localStream=null;pc=null;$('remoteVideo').srcObject=null;$('remotePlaceholder').style.display='block';toast('Panggilan diakhiri')}
-initFirebase();saveSettings();
-</script>
-</body><style>html{
- color:darkviolet;
- font-size:25px;
- font-weight:600;
+const firebaseConfig = {
+  apiKey: "AIzaSyB_dNmamUGlJtHidqM7vxL7ta37EsZz24o",
+  authDomain: "nomadic-basis-431707-b8.firebaseapp.com",
+  databaseURL: "https://nomadic-basis-431707-b8-default-rtdb.firebaseio.com",
+  projectId: "nomadic-basis-431707-b8",
+  storageBucket: "nomadic-basis-431707-b8.firebasestorage.app",
+  messagingSenderId: "351255276093",
+  appId: "1:351255276093:web:d96795daf864d737279854"
+};
+
+let db = null;
+let uid = null;
+let room = "global-lounge";
+let localStream = null;
+let pc = null;
+let unsubs = [];
+let callUnsubs = [];
+let currentCallRoom = "";
+let lastSpeechText = "";
+const seenPeers = new Map();
+
+const $ = id => document.getElementById(id);
+const names = {
+  id: "Indonesia", ja: "Jepang", en: "Inggris", zh: "Mandarin",
+  ko: "Korea", es: "Spanyol", fr: "Prancis", de: "Jerman", ar: "Arab"
+};
+
+function toast(t) {
+  const el = $('toast');
+  el.textContent = t;
+  el.style.display = 'block';
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => el.style.display = 'none', 3200);
 }
-</style><script>/*Here write your javascript code*/</script></html>
+
+function setConnectionUI(state, label) {
+  const dot = $('connDot');
+  dot.className = 'dot ' + (state === 'ok' ? '' : state === 'warn' ? 'warn' : 'err');
+  $('connection').textContent = label;
+}
+
+function showView(v) {
+  ['home', 'chat', 'calls', 'contacts', 'rooms', 'settings'].forEach(x => {
+    const sec = $(x + 'View');
+    if (sec) sec.hidden = x !== v;
+  });
+  document.querySelectorAll('.nav, .mobile-nav button').forEach(n => {
+    n.classList.toggle('active', n.dataset.view === v);
+  });
+  $('pageTitle').textContent = ({
+    home: 'Selamat datang di Global Talk',
+    chat: 'Pesan & percakapan',
+    calls: 'Panggilan video lintas bahasa',
+    contacts: 'Kontak & peserta aktif',
+    rooms: 'Komunitas Global',
+    settings: 'Pengaturan bahasa'
+  })[v] || 'Global Talk';
+}
+
+document.querySelectorAll('.nav').forEach(n => n.onclick = () => showView(n.dataset.view));
+
+function loadSavedSettings() {
+  const savedName = localStorage.getItem('gt_name');
+  const savedSrc = localStorage.getItem('gt_src');
+  const savedTgt = localStorage.getItem('gt_tgt');
+  if (savedName) $('nameInput').value = savedName;
+  if (savedSrc && names[savedSrc]) $('sourceLang').value = savedSrc;
+  if (savedTgt && names[savedTgt]) $('targetLang').value = savedTgt;
+}
+
+function saveSettings(silent = false) {
+  const n = $('nameInput').value.trim() || 'Pengguna Global';
+  const src = $('sourceLang').value;
+  const tgt = $('targetLang').value;
+  localStorage.setItem('gt_name', n);
+  localStorage.setItem('gt_src', src);
+  localStorage.setItem('gt_tgt', tgt);
+
+  $('displayName').textContent = n;
+  $('avatar').textContent = n.slice(0, 2).toUpperCase();
+  $('sourceLabel').textContent = names[src];
+  $('targetLabel').textContent = names[tgt];
+  $('myLangStat').textContent = names[src];
+  $('targetLangStat').textContent = names[tgt];
+  if (!silent) toast('Pengaturan bahasa & profil disimpan');
+}
+
+function initFirebase() {
+  try {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+    db = firebase.database();
+
+    db.ref('.info/connected').on('value', snap => {
+      if (snap.val() === true) {
+        setConnectionUI('ok', 'Firebase Realtime Terhubung');
+        $('dbStat').textContent = 'Terhubung (Online)';
+      } else {
+        setConnectionUI('warn', 'Menyambung ulang...');
+        $('dbStat').textContent = 'Menghubungkan...';
+      }
+    });
+
+    firebase.auth().signInAnonymously()
+      .then(cred => {
+        uid = cred.user.uid;
+        onReadySession('Auth: ' + uid.slice(0, 8));
+      })
+      .catch(err => {
+        console.warn('Anonymous Auth tidak aktif, menggunakan ID Sesi Lokal:', err.code);
+        let localUid = localStorage.getItem('gt_local_uid');
+        if (!localUid) {
+          localUid = 'usr_' + Math.random().toString(36).slice(2, 10);
+          localStorage.setItem('gt_local_uid', localUid);
+        }
+        uid = localUid;
+        onReadySession('Sesi: ' + uid.slice(0, 8));
+      });
+  } catch (e) {
+    console.error(e);
+    setConnectionUI('err', 'Gagal memuat Firebase');
+    $('dbStat').textContent = 'Error Konfigurasi';
+  }
+}
+
+function onReadySession(label) {
+  $('uidShort').textContent = label;
+  $('sessionStat').textContent = uid;
+  listenMessages();
+}
+
+async function translateText(text, from, to) {
+  if (!text || from === to) return '';
+  try {
+    const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${from}|${to}`;
+    const res = await fetch(url);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.responseData && data.responseData.translatedText) {
+        return data.responseData.translatedText;
+      }
+    }
+  } catch (e) {
+    console.warn('Gagal menerjemahkan via API:', e);
+  }
+  return '';
+}
+
+function listenMessages() {
+  if (!db) return;
+  unsubs.forEach(fn => fn());
+  unsubs = [];
+
+  $('messages').innerHTML = '';
+  $('messages2').innerHTML = '';
+
+  const ref = db.ref('publicRooms/' + room + '/messages').limitToLast(60);
+  const onAdded = async snap => {
+    const m = snap.val();
+    if (!m) return;
+    trackActivePeer(m);
+    await renderMessage(m);
+  };
+
+  ref.on('child_added', onAdded);
+  unsubs.push(() => ref.off('child_added', onAdded));
+
+  ref.once('value', snap => {
+    if (!snap.exists()) {
+      const emptyMsg = '<div class="muted small" id="emptyHint">Belum ada pesan di ruang ini. Jadilah yang pertama menyapa!</div>';
+      $('messages').innerHTML = emptyMsg;
+      $('messages2').innerHTML = emptyMsg;
+    }
+  });
+}
+
+function trackActivePeer(m) {
+  if (!m.uid || seenPeers.has(m.uid)) return;
+  seenPeers.set(m.uid, m.name || 'Pengguna');
+  const list = $('activeUsersList');
+  if (!list) return;
+  const item = document.createElement('div');
+  item.className = 'contact';
+  const initials = (m.name || 'PG').slice(0, 2).toUpperCase();
+  item.innerHTML = `<div class="avatar">${initials}</div><div><b>${escapeHtml(m.name || 'Pengguna')}</b><div class="online">● Aktif di ${escapeHtml(room)} (${escapeHtml(m.lang || '-')})</div></div>`;
+  list.prepend(item);
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, s => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[s]);
+}
+
+async function renderMessage(m) {
+  document.querySelectorAll('#emptyHint').forEach(el => el.remove());
+
+  let translated = '';
+  const myLang = $('sourceLang').value;
+
+  if (m.uid === uid) {
+    translated = m.translated || '';
+  } else {
+    if (m.source && m.source !== myLang) {
+      translated = await translateText(m.text, m.source, myLang);
+    } else if (m.translated && m.target === myLang) {
+      translated = m.translated;
+    }
+  }
+
+  ['messages', 'messages2'].forEach(id => {
+    const box = $(id);
+    if (!box) return;
+    const d = document.createElement('div');
+    d.className = 'bubble ' + (m.uid === uid ? 'me' : '');
+
+    const timeStr = m.createdAt ? new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
+    const who = document.createElement('div');
+    who.className = 'who';
+    who.innerHTML = `<span>${escapeHtml(m.name || 'Pengguna')} · ${escapeHtml(m.lang || '')}</span><span>${timeStr}</span>`;
+
+    const body = document.createElement('div');
+    body.textContent = m.text || '';
+    d.append(who, body);
+
+    if (translated && translated.toLowerCase() !== (m.text || '').toLowerCase()) {
+      const tr = document.createElement('div');
+      tr.className = 'translated';
+      tr.textContent = (m.uid === uid ? 'Terjemahan terkirim: ' : 'Terjemahan: ') + translated;
+      d.append(tr);
+    }
+
+    box.append(d);
+    box.scrollTop = box.scrollHeight;
+  });
+}
+
+async function sendMessage(inputId = 'messageInput') {
+  if (!db || !uid) {
+    toast('Menunggu koneksi Firebase...');
+    return;
+  }
+  const inp = $(inputId);
+  const text = inp.value.trim();
+  if (!text) return;
+
+  inp.value = '';
+  const from = $('sourceLang').value;
+  const to = $('targetLang').value;
+
+  try {
+    const translated = await translateText(text, from, to);
+    await db.ref('publicRooms/' + room + '/messages').push({
+      uid,
+      name: $('nameInput').value.trim() || 'Pengguna Global',
+      lang: names[from],
+      source: from,
+      target: to,
+      text,
+      translated,
+      createdAt: firebase.database.ServerValue.TIMESTAMP
+    });
+  } catch (err) {
+    console.error(err);
+    toast('Gagal mengirim pesan. Periksa aturan database Firebase.');
+  }
+}
+
+$('messageInput').addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage('messageInput'); });
+$('messageInput2').addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage('messageInput2'); });
+
+function setRoom(r) {
+  room = r;
+  $('roomLabel').textContent = 'Ruang aktif: ' + r;
+  $('activeRoomBadge').textContent = r;
+  $('activeRoomBadge2').textContent = r;
+  listenMessages();
+  showView('chat');
+  toast('Bergabung ke ruang: ' + r);
+}
+
+function startListening() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) {
+    toast('Browser ini belum mendukung pengenalan suara. Gunakan Google Chrome.');
+    return;
+  }
+  const rec = new SR();
+  const langMap = { id: 'id-ID', ja: 'ja-JP', en: 'en-US', zh: 'zh-CN', ko: 'ko-KR', es: 'es-ES', fr: 'fr-FR', de: 'de-DE', ar: 'ar-SA' };
+  rec.lang = langMap[$('sourceLang').value] || 'id-ID';
+  rec.interimResults = false;
+
+  rec.onstart = () => $('speechStatus').textContent = 'Mendengarkan... silakan bicara';
+  rec.onerror = e => {
+    toast('Mikrofon: ' + e.error);
+    $('speechStatus').textContent = 'Siap mendengarkan';
+  };
+  rec.onresult = async e => {
+    const text = e.results[0][0].transcript;
+    lastSpeechText = text;
+    $('speechResult').textContent = text;
+    $('sendSpeechBtn').disabled = false;
+
+    const tr = await translateText(text, $('sourceLang').value, $('targetLang').value);
+    $('speechTranslation').textContent = tr || '(Tidak perlu diterjemahkan)';
+
+    if (tr) {
+      const u = new SpeechSynthesisUtterance(tr);
+      u.lang = langMap[$('targetLang').value] || 'en-US';
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }
+    $('speechStatus').textContent = 'Terjemahan selesai';
+  };
+  rec.onend = () => {
+    if ($('speechStatus').textContent.startsWith('Mendengarkan')) {
+      $('speechStatus').textContent = 'Siap mendengarkan';
+    }
+  };
+  rec.start();
+}
+
+async function sendSpeechToChat() {
+  if (!lastSpeechText) return;
+  $('messageInput').value = lastSpeechText;
+  await sendMessage('messageInput');
+  toast('Pesan suara dikirim ke chat!');
+}
+
+function startCall() {
+  $('callModal').classList.add('open');
+}
+
+function closeModal() {
+  $('callModal').classList.remove('open');
+}
+
+async function confirmCall() {
+  currentCallRoom = $('callRoom').value.trim().replace(/[^a-zA-Z0-9_-]/g, '');
+  if (!currentCallRoom) {
+    toast('Masukkan kode ruang yang valid');
+    return;
+  }
+  closeModal();
+  await setupMedia(true);
+}
+
+async function joinCall() {
+  const code = prompt('Masukkan kode ruang panggilan:', 'global-talk-room');
+  if (!code) return;
+  currentCallRoom = code.trim().replace(/[^a-zA-Z0-9_-]/g, '');
+  if (currentCallRoom) {
+    await setupMedia(false);
+  }
+}
+
+function cleanupCallListeners() {
+  callUnsubs.forEach(fn => fn());
+  callUnsubs = [];
+}
+
+async function setupMedia(offerer) {
+  if (!db || !uid) {
+    toast('Firebase belum terhubung');
+    return;
+  }
+
+  endCall(true);
+
+  try {
+    localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    $('localVideo').srcObject = localStream;
+    $('muteBtn').disabled = false;
+    $('camBtn').disabled = false;
+
+    pc = new RTCPeerConnection({
+      iceServers: [
+        { urls: 'stun:stun.l.google.com:19302' },
+        { urls: 'stun:stun1.l.google.com:19302' }
+      ]
+    });
+
+    localStream.getTracks().forEach(track => pc.addTrack(track, localStream));
+
+    pc.ontrack = e => {
+      if (e.streams && e.streams[0]) {
+        $('remoteVideo').srcObject = e.streams[0];
+        $('remotePlaceholder').style.display = 'none';
+        $('callStateBadge').textContent = 'Terhubung';
+      }
+    };
+
+    pc.oniceconnectionstatechange = () => {
+      if (!pc) return;
+      const st = pc.iceConnectionState;
+      $('callStateBadge').textContent = st;
+      if (st === 'disconnected' || st === 'failed' || st === 'closed') {
+        $('remotePlaceholder').style.display = 'grid';
+      }
+    };
+
+    const root = db.ref('calls/' + currentCallRoom);
+    const myCandidates = root.child(offerer ? 'callerCandidates' : 'calleeCandidates');
+
+    pc.onicecandidate = e => {
+      if (e.candidate) {
+        myCandidates.push(e.candidate.toJSON());
+      }
+    };
+
+    if (offerer) {
+      await root.remove();
+
+      const offer = await pc.createOffer();
+      await pc.setLocalDescription(offer);
+      await root.child('offer').set({
+        type: offer.type,
+        sdp: offer.sdp,
+        from: uid,
+        createdAt: firebase.database.ServerValue.TIMESTAMP
+      });
+
+      const answerRef = root.child('answer');
+      const onAnswer = async snap => {
+        const a = snap.val();
+        if (a && pc && !pc.currentRemoteDescription) {
+          await pc.setRemoteDescription(new RTCSessionDescription(a));
+        }
+      };
+      answerRef.on('value', onAnswer);
+      callUnsubs.push(() => answerRef.off('value', onAnswer));
+
+      const calleeCandRef = root.child('calleeCandidates');
+      const onCalleeCand = snap => {
+        const c = snap.val();
+        if (c && pc) pc.addIceCandidate(new RTCIceCandidate(c)).catch(console.warn);
+      };
+      calleeCandRef.on('child_added', onCalleeCand);
+      callUnsubs.push(() => calleeCandRef.off('child_added', onCalleeCand));
+
+      $('callStateBadge').textContent = 'Menunggu lawan bicara...';
+    } else {
+      const offerRef = root.child('offer');
+      const onOffer = async snap => {
+        const o = snap.val();
+        if (o && pc && !pc.currentRemoteDescription) {
+          await pc.setRemoteDescription(new RTCSessionDescription(o));
+          const answer = await pc.createAnswer();
+          await pc.setLocalDescription(answer);
+          await root.child('answer').set({
+            type: answer.type,
+            sdp: answer.sdp,
+            from: uid
+          });
+        }
+      };
+      offerRef.on('value', onOffer);
+      callUnsubs.push(() => offerRef.off('value', onOffer));
+
+      const callerCandRef = root.child('callerCandidates');
+      const onCallerCand = snap => {
+        const c = snap.val();
+        if (c && pc) pc.addIceCandidate(new RTCIceCandidate(c)).catch(console.warn);
+      };
+      callerCandRef.on('child_added', onCallerCand);
+      callUnsubs.push(() => callerCandRef.off('child_added', onCallerCand));
+
+      $('callStateBadge').textContent = 'Menghubungkan ke ruang...';
+    }
+
+    const infoEl = $('activeCallInfo');
+    infoEl.style.display = 'block';
+    infoEl.innerHTML = `Kode Ruang Panggilan: <b>${escapeHtml(currentCallRoom)}</b> <button class="secondary small" style="padding:4px 9px;margin-left:6px" onclick="copyRoomCode()">Salin Kode</button>`;
+    toast('Kamera aktif. Kode ruang: ' + currentCallRoom);
+  } catch (e) {
+    console.error(e);
+    toast('Gagal akses kamera/mikrofon: ' + e.message);
+  }
+}
+
+function copyRoomCode() {
+  if (!currentCallRoom) return;
+  navigator.clipboard.writeText(currentCallRoom).then(() => toast('Kode ruang disalin: ' + currentCallRoom));
+}
+
+function toggleAudio() {
+  if (!localStream) return;
+  const track = localStream.getAudioTracks()[0];
+  if (track) {
+    track.enabled = !track.enabled;
+    $('muteBtn').textContent = track.enabled ? '🎤 Mute' : '🔇 Unmute';
+  }
+}
+
+function toggleVideo() {
+  if (!localStream) return;
+  const track = localStream.getVideoTracks()[0];
+  if (track) {
+    track.enabled = !track.enabled;
+    $('camBtn').textContent = track.enabled ? '📷 Cam Off' : '📷 Cam On';
+  }
+}
+
+function endCall(silent = false) {
+  cleanupCallListeners();
+  if (localStream) {
+    localStream.getTracks().forEach(t => t.stop());
+    localStream = null;
+  }
+  if (pc) {
+    pc.close();
+    pc = null;
+  }
+  $('remoteVideo').srcObject = null;
+  $('localVideo').srcObject = null;
+  $('remotePlaceholder').style.display = 'grid';
+  $('callStateBadge').textContent = 'Siap';
+  $('activeCallInfo').style.display = 'none';
+  $('muteBtn').disabled = true;
+  $('camBtn').disabled = true;
+  $('muteBtn').textContent = '🎤 Mute';
+  $('camBtn').textContent = '📷 Cam Off';
+  if (!silent) toast('Panggilan video diakhiri');
+}
+
+loadSavedSettings();
+saveSettings(true);
+initFirebase();
+</script>
+</body>
+</html>
